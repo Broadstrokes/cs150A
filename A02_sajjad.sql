@@ -5,7 +5,12 @@
 
 
 /*  TASK 01 */
-
+select 
+	stf_name_first,
+	stf_name_last,
+	stf_job_title 
+from 
+	vt_staff;
 /*  TASK 02  */
 
 /*  TASK 04 */
