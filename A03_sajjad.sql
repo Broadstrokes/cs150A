@@ -9,3 +9,10 @@ where
   cl_phone is not null 
 order by
   cl_id;
+/*  TASK 02  */
+select distinct
+  srv_id 
+from
+  vt_exam_details 
+where
+  ex_fee >= 75;
