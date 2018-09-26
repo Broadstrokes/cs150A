@@ -30,4 +30,17 @@ where
     'lizard' 
   )
 order by
-  cl_id;
+  cl_id;/*  TASK 04 */
+select
+  cl_id,
+  an_id,
+  an_type,
+  an_name 
+from
+  vt_animals 
+where
+  an_type in 
+  (
+    'cat',
+    'dog'
+  );
