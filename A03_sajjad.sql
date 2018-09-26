@@ -67,4 +67,27 @@ where
   )
 order by
   ex_id,
+/*  TASK 06 */
+select
+  vt_clients.cl_id,
+  vt_exam_headers.ex_id,
+  vt_exam_headers.ex_date,
+  vt_exam_details.srv_id,
+  vt_exam_details.ex_fee 
+from
+  vt_clients 
+  inner join
+    vt_animals 
+    on vt_clients.cl_id = vt_animals.cl_id 
+  inner join
+    vt_exam_headers 
+    on vt_animals.an_id = vt_exam_headers.an_id 
+  inner join
+    vt_exam_details 
+    on vt_exam_headers.ex_id = vt_exam_details.ex_id 
+where
+  ex_fee < 25 
+  or ex_fee > 200 
+order by
+  ex_date,
   srv_id;
