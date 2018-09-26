@@ -43,4 +43,28 @@ where
   (
     'cat',
     'dog'
-  );
+  );/*  TASK 05 */
+select
+  vt_exam_headers.ex_id,
+  vt_exam_headers.ex_date,
+  vt_exam_details.srv_id,
+  vt_exam_details.ex_fee 
+from
+  vt_exam_headers 
+  inner join
+    vt_exam_details 
+    on vt_exam_headers.ex_id = vt_exam_details.ex_id 
+  inner join
+    vt_animals 
+    on vt_exam_headers.an_id = vt_animals.an_id 
+where
+  an_type in 
+  (
+    'hamster',
+    'capybara',
+    'porcupine',
+    'dormouse' 
+  )
+order by
+  ex_id,
+  srv_id;
