@@ -15,4 +15,19 @@ select distinct
 from
   vt_exam_details 
 where
-  ex_fee >= 75;
+  ex_fee >= 75;/*  TASK 03 */
+select distinct
+  cl_id,
+  an_type 
+from
+  vt_animals 
+where
+  an_type in 
+  (
+    'snake',
+    'chelonian',
+    'crocodilian',
+    'lizard' 
+  )
+order by
+  cl_id;
