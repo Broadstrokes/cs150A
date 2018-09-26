@@ -1,3 +1,5 @@
+
+
 /*  TASK 01 */
 select
   cl_name_first,
@@ -9,13 +11,16 @@ where
   cl_phone is not null 
 order by
   cl_id;
+
 /*  TASK 02  */
 select distinct
   srv_id 
 from
   vt_exam_details 
 where
-  ex_fee >= 75;/*  TASK 03 */
+  ex_fee >= 75;
+
+/*  TASK 03 */
 select distinct
   cl_id,
   an_type 
@@ -30,7 +35,9 @@ where
     'lizard' 
   )
 order by
-  cl_id;/*  TASK 04 */
+  cl_id;
+
+/*  TASK 04 */
 select
   cl_id,
   an_id,
@@ -43,7 +50,9 @@ where
   (
     'cat',
     'dog'
-  );/*  TASK 05 */
+  );
+
+/*  TASK 05 */
 select
   vt_exam_headers.ex_id,
   vt_exam_headers.ex_date,
@@ -67,6 +76,8 @@ where
   )
 order by
   ex_id,
+  srv_id;
+  
 /*  TASK 06 */
 select
   vt_clients.cl_id,
