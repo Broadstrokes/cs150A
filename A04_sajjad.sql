@@ -5,11 +5,12 @@ select
 	an_type,
 	an_name
 from vt_animals
-	where an_type in 
-  (
-    'cat',
-    'dog'
-  )
+where 
+	an_type in 
+	  (
+	    'cat',
+	    'dog'
+	  );
 
 /*  TASK 02  */
 select 
