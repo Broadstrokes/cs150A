@@ -1,5 +1,3 @@
-
-
 /*  TASK 01 */
 select 
 	cl_id,
@@ -40,8 +38,8 @@ where
 	  ) 
   or 
   an.cl_id is null;
-/*  TASK 04 */
 
+/*  TASK 04 */
 select
 	cl.cl_id as "cl_cl_id",
 	cl.cl_name_last as "cl.cl_name_last",
@@ -73,7 +71,8 @@ where
 	    'chelonian',
 	    'crocodilian',
 	    'lizard' 
-	  );   
+	  );
+
 /*  TASK 06 */
 select
 	cl.cl_id as "cl_cl_id",
@@ -97,4 +96,18 @@ AND
 	    'cat',
 	    'bird'
 	  );
+
 /*  TASK 07 */
+select
+	srv.srv_id as "srv.srv_id",
+	srv.srv_list_price as "srv.srv_list_price",
+	srv.srv_desc as "srv.srv_desc",
+	srv.srv_type as "srv.srv_type"
+from 
+	vt_services srv
+	left join vt_exam_details ex
+		on srv.srv_id = ex.srv_id
+where 
+	srv.srv_list_price >= 100
+and 
+	ex.srv_id is null;
