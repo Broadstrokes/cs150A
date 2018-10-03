@@ -57,13 +57,23 @@ where
 	ex.an_id is null
 order by
 	an.cl_id,
-	an.an_id
-;
-
-
+	an.an_id;
 
 /*  TASK 05 */
-  
+select
+	cl.cl_id as "cl_cl_id",
+	cl.cl_name_last as "cl.cl_name_last"
+from vt_clients cl
+	left join vt_animals an
+		on cl.cl_id = an.cl_id
+where 
+	an.an_type not in 
+	  (
+	    'snake',
+	    'chelonian',
+	    'crocodilian',
+	    'lizard' 
+	  );   
 /*  TASK 06 */
 
 /*  TASK 07 */
