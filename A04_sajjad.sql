@@ -75,5 +75,26 @@ where
 	    'lizard' 
 	  );   
 /*  TASK 06 */
-
+select
+	cl.cl_id as "cl_cl_id",
+	cl.cl_name_last as "cl.cl_name_last",
+	an.an_id as "an.an_id",
+	an.an_name as "an.an_name",
+	an.an_dob as "an.an_dob"
+from vt_clients cl
+	inner join vt_animals an
+		on cl.cl_id = an.cl_id
+where
+	cl.cl_state in 
+		(
+			'MA',
+			'NY'
+		) 
+AND
+	an.an_type not in 
+	  (
+	    'dog',
+	    'cat',
+	    'bird'
+	  );
 /*  TASK 07 */
