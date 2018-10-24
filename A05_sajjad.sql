@@ -50,3 +50,19 @@ where cl_id in (
 			'lizard' 
 		)
 	);
+
+/*  TASK 04 
+Display the client id and last name for each client who 
+does not have an animal.
+*/
+select 
+	cl_id, 
+	cl_name_last
+from 
+	vt_clients
+where cl_id not in (
+	select 
+		cl_id
+	from 
+		vt_animals
+);
