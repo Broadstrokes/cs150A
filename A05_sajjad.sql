@@ -27,3 +27,26 @@ select
 from vt_animals an
 	inner join vt_exam_headers ex
 	using (an_id);	
+
+/*  TASK 03 
+Display the client id and last name for each client who has 
+at least one animal that is not a reptile.
+*/
+select distinct
+	cl_id, 
+	cl_name_last
+from 
+	vt_clients
+where cl_id in (
+	select distinct
+		cl_id
+	from 
+		vt_animals
+	where an_type not in 
+		(
+			'snake',
+			'chelonian',
+			'crocodilian',
+			'lizard' 
+		)
+	);
