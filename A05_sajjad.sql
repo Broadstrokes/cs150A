@@ -110,3 +110,30 @@ and cl_id
 		from vt_animals
 		where an_type in ('dog')
 );
+
+
+/*  TASK 07
+ * Display the client id and client last name for each client who 
+ * owns a dog and does not own a reptile.
+ */
+select distinct cl_id, cl_name_last
+from vt_clients
+where cl_id 
+not in (
+ select distinct cl_id
+ from vt_animals
+ where an_type 
+ in (
+	  'snake',
+	  'chelonian',
+	  'crocodilian',
+	  'lizard'
+	)
+)
+and cl_id 
+in (
+	select cl_id
+	from vt_animals
+	where an_type 
+	in ('dog')
+);
