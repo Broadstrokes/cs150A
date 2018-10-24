@@ -12,3 +12,18 @@ select
 from vt_clients cl
 	inner join vt_animals an
 		using(cl_id);
+
+/*  TASK 02 
+Display all animals and their exam information if they have any exams. 
+Display the following: animal id, animal type, and animal name, exam id, 
+the year of the exam date, and the service id for any services on the exam
+*/
+select
+	an.an_id,
+	an.an_type,
+	an.an_name,
+	ex.ex_id,
+	ex.ex_date
+from vt_animals an
+	inner join vt_exam_headers ex
+	using (an_id);	
