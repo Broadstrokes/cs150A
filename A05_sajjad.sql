@@ -66,3 +66,22 @@ where cl_id not in (
 	from 
 		vt_animals
 );
+
+/* TASK 05 
+Display data about services we have in the services table that 
+have a list price of $100 or more and that have not been used on any exam. 
+Display the service id, list price, description and service type
+*/
+select distinct
+	srv.srv_id as "srv.srv_id",
+	srv.srv_list_price as "srv.srv_list_price",
+	srv.srv_desc as "srv.srv_desc",
+	srv.srv_type as "srv.srv_type"
+from 
+	vt_services srv
+where srv.srv_id not in (
+	select srv_id
+	from vt_exam_details
+)
+and srv_list_price >= 100;
+
