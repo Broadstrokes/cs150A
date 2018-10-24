@@ -85,3 +85,28 @@ where srv.srv_id not in (
 )
 and srv_list_price >= 100;
 
+
+/*  TASK 06 
+Display the client id and client last name for each client who owns a dog 
+and owns a reptile.
+*/
+select distinct cl_id, cl_name_last
+from vt_clients
+where cl_id 
+	in (
+   select distinct cl_id
+   from vt_animals
+   where an_type
+   in (
+    'snake',
+    'chelonian',
+    'crocodilian',
+    'lizard'
+	 )
+  )
+and cl_id 
+	in (
+		select cl_id
+		from vt_animals
+		where an_type in ('dog')
+);
