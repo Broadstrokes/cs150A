@@ -151,6 +151,40 @@ EXCEPT
 			order_month = 6
 ;
 
+/*
+TASK 05 
+Display customer id and name for all customers who have at least one order in either March or June but have no orders in September.
+*/
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 3
+UNION
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 6
+EXCEPT
+	select 
+			"Customer Name"
+			,customer_id
+			,order_id
+			,order_date
+		from 
+			oeOrdersPriorYear
+		where 
+			order_month = 9
+;
 
 
 /*
