@@ -116,6 +116,40 @@ UNION
 			order_month = 9
 ;
 
+/*
+TASK 04
+Display customer id and name for all customers who have at least one order in April and at least one order in May but no orders in June.
+*/
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 4
+INTERSECT
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 5
+EXCEPT
+	select 
+			"Customer Name"
+			,customer_id
+			,order_id
+			,order_date
+		from 
+			oeOrdersPriorYear
+		where 
+			order_month = 6
+;
 
 
 
