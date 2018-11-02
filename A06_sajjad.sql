@@ -50,3 +50,51 @@ and
 order by
 	"Customer Name"
 ;
+
+/*
+TASK 02
+Display customer id and name for all customers who have at least one order in March and at least one order in June and at least one order in September.
+*/
+
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 3
+INTERSECT
+	select 
+		"Customer Name"
+		,customer_id
+		,order_id
+		,order_date
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 6
+INTERSECT
+	select 
+			"Customer Name"
+			,customer_id
+			,order_id
+			,order_date
+		from 
+			oeOrdersPriorYear
+		where 
+			order_month = 9
+;
+
+
+
+
+/*
+	March 3
+	April 4
+	May 5
+	June 6
+	August 8
+	September 9
+ */
