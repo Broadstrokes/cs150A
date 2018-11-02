@@ -87,6 +87,35 @@ INTERSECT
 			order_month = 9
 ;
 
+/*
+TASK 03
+Display customer id and name for all customers who have at least one order in at least one of the months: April, June, August.
+*/
+	select 
+		"Customer Name"
+		,customer_id
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 3
+UNION
+	select 
+		"Customer Name"
+		,customer_id
+	from 
+		oeOrdersPriorYear
+	where 
+		order_month = 6
+UNION
+	select 
+			"Customer Name"
+			,customer_id
+		from 
+			oeOrdersPriorYear
+		where 
+			order_month = 9
+;
+
 
 
 
