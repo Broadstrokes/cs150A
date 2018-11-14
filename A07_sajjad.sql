@@ -90,3 +90,18 @@ insert into bk_order_details (order_id, order_line, cust_id, book_id, quantity, 
 
 insert into bk_order_details (order_id, order_line, cust_id, book_id, quantity, order_price)
 	values (12855, 1, 221297, 1101, 5, 59.99);
+/*
+TASK 03
+Write a query that will display the entire contents of all of your tables in the same format as the sample data.  To accomplish this, you will need to join all tables and display all columns.  Compare the output of your query to the sample data to confirm that your database accurately represents the data.
+*/
+
+
+SELECT 
+	bk_books.*,
+	bk_order_details.*,
+	bk_order_headers.*,
+	bk_customers.*
+FROM bk_customers 
+	INNER JOIN bk_order_headers using (cust_id) 
+	INNER JOIN bk_order_details using (order_id)
+	INNER JOIN bk_books using (book_id);
